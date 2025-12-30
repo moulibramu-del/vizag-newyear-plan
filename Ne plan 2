@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vizag Outing Plan 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;400&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #f0f0f0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.5s ease;
+    }
+
+    /* Background Video - Full Screen + Zoomed */
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.3);
+        transform-origin: center;
+        z-index: -2;
+        border: none;
+    }
+
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    #splash {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 2px 2px 4px rgba(0,0,0,0.8);
+        padding: 20px;
+        max-width: 80%;
+        letter-spacing: 1px;
+        z-index: 2;
+        position: relative;
+        transition: opacity 0.6s ease;
+    }
+
+    .container {
+        max-width: 900px; /* Konchem wide chesa desktop vibe kosam */
+        width: 90%;
+        margin: 0 auto;
+        overflow-y: auto;
+        position: relative;
+        padding: 40px 30px;
+        display: none;
+        z-index: 2;
+        max-height: 100vh;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.2); /* Light backdrop for desktop feel */
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+
+    .header {
+        background: linear-gradient(135deg, #ff416c, #ff4b2b);
+        color: white;
+        padding: 50px 30px;
+        text-align: center;
+        border-radius: 25px;
+        margin-bottom: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .initials {
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: 12px;
+        text-shadow: 4px 4px 8px rgba(0,0,0,0.7);
+        margin-bottom: 20px;
+    }
+
+    /* Rest of styles same */
+    .header h1 { margin: 0; font-size: 32px; text-transform: uppercase; letter-spacing: 3px; text-shadow: 2px 2px 6px rgba(0,0,0,0.6); font-weight: 400; }
+    .header p { margin-top: 15px; font-size: 18px; font-weight: 500; opacity: 0.95; }
+    .timeline { padding: 0 20px; }
+    .event { display: flex; margin-bottom: 50px; }
+    .time-badge { background: rgba(0,0,0,0.6); color: #fff; padding: 22px 12px; border-radius: 18px; min-width: 110px; font-size: 17px; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.15); }
+    .content { background: rgba(255,255,255,0.12); padding: 30px; margin-left: 30px; border-radius: 0 25px 25px 0; backdrop-filter: blur(15px); }
+    .morning .time-badge, .morning .content { border-color: #FF9800; color: #FF9800; }
+    .afternoon .time-badge, .afternoon .content { border-color: #29B6F6; color: #29B6F6; }
+    .evening .time-badge, .evening .content { border-color: #66BB6A; color: #66BB6A; }
+    .night .time-badge, .night .content { border-color: #AB47BC; color: #AB47BC; }
+    .place-name { font-size: 26px; margin-bottom: 12px; }
+    .visit-time { font-size: 15px; padding: 8px 14px; }
+    .details { font-size: 17px; line-height: 1.7; }
+    .highlight { font-size: 16px; margin-top: 15px; }
+    .footer { padding: 30px; font-size: 20px; margin-top: 50px; }
+</style>
+</head>
+<body>
+
+<iframe id="bg-video" src="https://www.youtube.com/embed/pMyga9xMBxY?autoplay=1&mute=1&loop=1&playlist=pMyga9xMBxY&controls=0&rel=0&showinfo=0&iv_load_policy=3&modestbranding=1&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div id="overlay"></div>
+
+<audio id="bgMusic" loop>
+    <source src="https://sentunes.online/mp32/mp3/2017/Dj%20-%20Duvvada%20Jagannadham%20(2017)/Dj%20128%20Kbps/Seeti%20Maar-SenSongsMp3.Co.mp3" type="audio/mp3">
+</audio>
+
+<div id="splash">
+    Screen midha okasari tap cheyandi! 🎶🔥
+</div>
+
+<div class="container" id="planContainer">
+    <div class="header">
+        <div class="initials">[M] [S] [N]</div>
+        <h1>Vizag Boys New Year Plan 2025 🎆</h1>
+        <p>Route: Marikavalasa ➔ City ➔ Beach | Dec 31st Chill Ride 🏍️</p>
+    </div>
+
+    <div class="timeline">
+        <div class="event morning">
+            <div class="time-badge">MORNING<br>START</div>
+            <div class="content">
+                <h3 class="place-name">1. Kambalakonda Eco Park 🌲</h3>
+                <div class="visit-time">⏱️ Time: 9:30 AM - 1:00 PM</div>
+                <p class="details">
+                    Morning fresh ga start! Nature walk, views, photos – perfect kickoff.<br>
+                    Park timings: 9 AM - 4:30 PM.<br>
+                    <span class="highlight">🎫 Entry: ₹40-50 per head</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="event afternoon">
+            <div class="time-badge">AFTER<br>LUNCH</div>
+            <div class="content">
+                <h3 class="place-name">2. Snow Station ❄️</h3>
+                <div class="visit-time">⏱️ Time: 2:00 PM - 4:00 PM</div>
+                <p class="details">
+                    <b>Loc:</b> Vishwanadh Sports Club, Port Stadium.<br>
+                    -8°C snow room – full winter vibe!<br>
+                    <span class="highlight">🎫 Ticket: ₹799-850</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="event evening">
+            <div class="time-badge">EVENING<br>FUN</div>
+            <div class="content">
+                <h3 class="place-name">3. SkyZone Trampoline Park 🤸‍♂️</h3>
+                <div class="visit-time">⏱️ Time: 4:30 PM - 6:00 PM</div>
+                <p class="details">
+                    <b>Loc:</b> Port Stadium area.<br>
+                    Jump, dodgeball, slam dunk!<br>
+                    <span class="highlight">🎫 Budget: ₹600-900</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="event night">
+            <div class="time-badge">NIGHT<br>VIBE</div>
+            <div class="content">
+                <h3 class="place-name">4. Maya World ✨ (Mirror Maze)</h3>
+                <div class="visit-time">⏱️ Time: 6:30 PM - 8:30 PM + Beach Walk</div>
+                <p class="details">
+                    <b>Loc:</b> TU-142 Museum, RK Beach.<br>
+                    New mirror rooms, illusions, lights – perfect ending!<br>
+                    Tarwata RK Beach lo walk & vibes.<br>
+                    <span class="highlight">🎫 Ticket: ₹150-200</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Ride Safe, Full Enjoy & Happy New Year 2026 Boys! 🏍️🎉😎
+    </div>
+</div>
+
+<script>
+    const audio = document.getElementById('bgMusic');
+    const splash = document.getElementById('splash');
+    const container = document.getElementById('planContainer');
+    audio.volume = 0.35;
+
+    document.body.addEventListener('click', function revealPlan() {
+        // Remove splash
+        splash.style.opacity = '0';
+        setTimeout(() => { splash.style.display = 'none'; }, 600);
+
+        // Show plan with fade in
+        container.style.display = 'block';
+        setTimeout(() => { container.style.opacity = '1'; }, 100);
+
+        // Enable scroll & auto scroll to top
+        document.body.style.overflow = 'auto';
+        document.body.style.alignItems = 'flex-start';
+        document.body.style.paddingTop = '20px';
+
+        // Automatic smooth scroll to top of plan
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Play music
+        if (audio.paused) {
+            audio.play().then(() => {
+                audio.currentTime = 25;
+            }).catch(e => console.log("Music play issue"));
+        }
+
+        // Remove listener after first click
+        document.body.removeEventListener('click', revealPlan);
+    });
+
+    // Try autoplay (fails on mobile without interaction)
+    audio.play().catch(() => {});
+</script>
+
+</body>
+</html>
